@@ -1,0 +1,32 @@
+<div class="edit-form-container">
+  <h1 class="edit-form-title">Редактируйте данные</h1>
+  
+  <form [formGroup]="editForm" class="edit-form">
+    <mat-form-field appearance="outline" class="form-field">
+      <h3 class="field-label">Название</h3>
+      <input matInput formControlName="name" aria-label="Name" class="form-input">
+      <mat-hint>Введите название</mat-hint>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline" class="form-field">
+      <h3 class="field-label">Номер</h3>
+      <input matInput formControlName="position" aria-label="Position" class="form-input">
+      <mat-hint>Введите номер</mat-hint>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline" class="form-field">
+      <h4 class="field-label">Местоположение/Количество/Специализация</h4>
+      <input matInput formControlName="weight" aria-label="Weight" class="form-input">
+      <mat-hint>Укажите параметры</mat-hint>
+    </mat-form-field>
+    
+    <div class="form-actions">
+      <button mat-raised-button color="primary" (click)="onSaveClick()" class="action-button save-button">
+        <mat-icon>save</mat-icon> Сохранить изменения
+      </button>
+      <button mat-stroked-button (click)="onCancelClick()" class="action-button cancel-button">
+        <mat-icon>cancel</mat-icon> Отмена
+      </button>
+    </div>
+  </form>
+</div>

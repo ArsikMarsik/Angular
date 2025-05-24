@@ -1,0 +1,119 @@
+/* Основные стили */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-title {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 28px;
+  font-weight: 500;
+  position: relative;
+}
+
+.form-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #e74c3c);
+  border-radius: 2px;
+}
+
+/* Форма */
+.data-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Поля формы */
+.form-field {
+  width: 100%;
+}
+
+.field-label {
+  color: #3498db;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #3498db;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-invalid .mat-form-field-outline-thick {
+  color: #e74c3c;
+}
+
+.form-input {
+  font-size: 16px;
+  padding: 8px 0;
+}
+
+/* Кнопки */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.action-button {
+  border-radius: 24px;
+  padding: 8px 24px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+}
+
+.save-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.cancel-button {
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+}
+
+.cancel-button:hover {
+  background: rgba(231, 76, 60, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 24px 16px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .action-button {
+    width: 100%;
+  }
+}

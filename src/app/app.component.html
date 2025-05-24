@@ -1,0 +1,138 @@
+<main class="main">
+  <h1>УЧЕТ ТОВАРОВ НА СКЛАДЕ</h1>
+  <div class="sidebar">
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="Поставщики">
+        
+        <div class="button">
+          <button mat-raised-button (click)="addRow2()">Добавить данные</button>
+        </div>
+        <div class="example-large-box mat-elevation-z4">
+          <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+            
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef>Номер</th>
+              <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef>Название</th>
+              <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="weight">
+              <th mat-header-cell *matHeaderCellDef>Специализация</th>
+              <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="menu">
+              <th mat-header-cell *matHeaderCellDef>Меню</th>
+              <td mat-cell *matCellDef="let element">
+                
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="openDialog2(element)">Редактировать</button>
+                  <button mat-menu-item (click)="deleteRow2(element)">Удалить</button>
+                </mat-menu>
+                
+                
+              </td>
+            </ng-container>
+           
+            <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+          </table>
+        
+        </div>
+      </mat-tab>
+      <mat-tab label="Склады">
+        <div class="button">
+          <button mat-raised-button (click)="addRow()">Добавить данные</button>
+        </div>
+        
+        <div class="example-large-box mat-elevation-z4">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef>Номер</th>
+              <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+            </ng-container>
+           
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef>Название</th>
+              <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+            </ng-container>
+           
+            <ng-container matColumnDef="weight">
+              <th mat-header-cell *matHeaderCellDef>Местоположение</th>
+              <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+            </ng-container>
+           
+            <ng-container matColumnDef="menu">
+              <th mat-header-cell *matHeaderCellDef>Меню</th>
+              <td mat-cell *matCellDef="let element">
+                
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="openDialog(element)">Редактировать</button>
+                  <button mat-menu-item (click)="deleteRow(element)">Удалить</button>
+                </mat-menu>
+                
+                
+              </td>
+            </ng-container>
+           
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Товары">
+        <div class="example-large-box mat-elevation-z4">
+          <div class="button">
+            <button mat-raised-button (click)="addRow3()">Добавить данные</button>
+          </div>
+          <div class="example-large-box mat-elevation-z4">
+            <table mat-table [dataSource]="dataSource3" class="mat-elevation-z8">
+              
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef>Номер</th>
+                <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+              </ng-container>
+              
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Название</th>
+                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+              </ng-container>
+             
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef>Колличество</th>
+                <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+              </ng-container>
+              
+              <ng-container matColumnDef="menu">
+                <th mat-header-cell *matHeaderCellDef>Меню</th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="openDialog3(element)">Редактировать</button>
+                    <button mat-menu-item (click)="deleteRow3(element)">Удалить</button>
+                  </mat-menu>
+                </td>
+              </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns3;"></tr>
+            </table>
+          </div>
+        </div>
+      </mat-tab>      
+    </mat-tab-group>
+  </div>
+</main>
